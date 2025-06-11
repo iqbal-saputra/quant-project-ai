@@ -1,3 +1,8 @@
+//+------------------------------------------------------------------+
+//|                XAUUSD_ONNX_MULTIVAR.mq5                          |
+//+------------------------------------------------------------------+
+#property copyright "Copyright 2025, Vord & Iqbal"
+#property version   "1.01"
 #include <Trade/Trade.mqh>
 
 input double InpLots = 0.01;
@@ -23,7 +28,7 @@ datetime ExtNextDay = 0;
 input double MinDelta = 3.0;
 input int    ATR_Period    = 14;
 input double SL_ATR_Mult   = 1.5;
-input double TP_ATR_Mult   = 2.5;
+input double TP_ATR_Mult   = 2.0;
 input double Trail_ATR_Mult= 1.0;
 
 
@@ -48,6 +53,8 @@ double GetATR(int period, int shift=0)
     IndicatorRelease(handle);
     return 0.0;
 }
+
+
 
 void GetMinMax()
 {
@@ -274,3 +281,4 @@ void OnTick()
    }
    ApplyTrailingStop();
 }
+//+------------------------------------------------------------------+
